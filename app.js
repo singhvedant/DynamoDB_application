@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AWS = require("aws-sdk");
 var app = express();
-app.listen(3000, () => console.log('Cars API listening on port 3000!'))
+app.listen(process.env.port || 3000, () => console.log('Cars API listening on port 3000!'))
 AWS.config.update({
     region: "eu-west-2",
     endpoint: "http://localhost:8000"
